@@ -4,6 +4,7 @@ title:      git-flow VS trunk-based
 subtitle:   
 date:       2017-01-05
 author:     BY annie dong
+header-img: img/post-bg.jpg
 catalog: true
 tags:
     - git
