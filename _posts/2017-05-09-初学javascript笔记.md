@@ -1,19 +1,18 @@
-
 ---
 layout:     post
 title:      初学javascript笔记
-subtitle:   初学javascript笔记
-date:       2017-01-05
+subtitle:   
+date:       2017-05-09
 author:     BY annie dong
 header-img: img/post-bg.jpg
 catalog: true
 tags:
     - javascript
 ---
+
 javascript实现者Netscape、Mozilla基金会
 它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。
 
----
 ### javascript的组成
 ECMAScript，描述了该语言的语法和基本对象。
 文档对象模型（DOM），描述处理网页内容的方法和接口。
