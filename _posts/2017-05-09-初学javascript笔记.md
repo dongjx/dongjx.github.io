@@ -206,40 +206,28 @@ $.get(), $.post() 回调函数第一个回调参数存有被请求页面的内�
 ```
 
 
-* click(), bind(),live(),delegate()区别：
+### jquery click(), bind(),live(),delegate()区别
 
-1、click()与bind()
+1.click()与bind()
 
 　　- click()
-  
-　　　　在jqeury事件处理API中，bind()是其API基础。click(),mouseover(),mousermove等来处理事件，真正起作用的是bind()。而这些方法都只是辅助作用（别名函数），简化使用。他们都只有一个参数(触发事件时执行的回调函数).
-    
+　　　　在jquery事件处理API中，bind()是其API基础。click(),mouseover(),mousermove等来处理事件，真正起作用的是bind()。而这些方法都只是辅助作用（别名函数），简化使用。他们都只有一个参数(触发事件时执行的回调函数).
 　　- bind()
-  
 　　　　bind()能更好的控制事件处理函数中的处理过程，且它可以一次绑定多个事件（事件名作为第一个参数，多个事件用空格分开，eg：bind('click contains',function(){})  鼠标左右点击事件 ）
-    
 所有实用bind()或者click(),mouserover()绑定的事件都可以使用unbind()方法解除绑定
 
-2、live()
+2.live()
 
 　　与bind()作用基本一样。
-  
 　　最重要区别：live()可以将事件绑定到当前和将来的元素(eg:为id=zy元素绑定点击事件，而当你用js动态生成一个节点并插入到dom文档结构中时，如果你是用bind()绑定的，怎么新插入的节点将不会有该bind绑定事件。而live()则可以)
-  
 　　缺点: 无法用于链式结构。
-  
-        ```
-　　　　　　eg:  $('.class').live('click',function(){  })     正确写法
-　　　　　　　　 $('.class').find('span').live('click',function(){  })   错误写法  无效
-         ```
-         
+　　　　　　`eg:  $('.class').live('click',function(){  })     正确写法`
+　　　　　　　　 `$('.class').find('span').live('click',function(){  })   错误写法  无效`
 　　live()绑定的事件可用 die()方法解除绑定。
 
-3、delegate()
+3.delegate()
 
 　　与live()作用基本一样，但是解决live缺点。它通过将选择器内的上下文作为第一个参数来解决live问题（也就是delegate得第一个参数你可以当作是一个选择元素所用）。
-  
 `eg. $('.class').delegate('span','mouseover',fucntion(){  })    为class为class的元素下的所有span标签绑定mouseover事件。`
-
 　　通过delegate()绑定的事件可通过undelegate()方法解除处理函数的绑定。
 
