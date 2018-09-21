@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      git-flow VS trunked-base
+title:      git-flow VS trunk-based
 subtitle:   
 date:       2017-01-05
 author:     BY annie dong
