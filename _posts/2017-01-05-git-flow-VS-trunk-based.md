@@ -16,6 +16,7 @@ tags:
 ---
 
 ## Git-flow & Trunk-based
+
 ### Git-flow
 1. 从dev分支拉出Release分支
 2. 基于dev分支开发
@@ -30,11 +31,13 @@ tags:
 
 
 ## Git-flow VS Trunk-based
+
 ### Git-Flow
 `Git-Flow涉及分支 feature/master/develop/release/hotfix`
 - 当您运行开源项目，或基于Pull Request的开发方式
 - 当你有很多初级开发人员
 - 当你有一个非常成熟的产品或者管理一个大型团队
+
 ### Trunk-Based
 `Trunk-based涉及分支 master/release`
 - 当你开始项目没多久
