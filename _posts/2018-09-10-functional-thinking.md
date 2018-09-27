@@ -80,7 +80,7 @@ java8提供了stream, optional
 3. 不要提供无参数构造器，至少提供一个构造器，除构造器外不提供任何改变状态的方法
 
 
-### 参考资料
--《functional thinking》  
+### 参考资料  
+- 《functional thinking》  
 - 可能是最好的函数式编程入门[https://www.jianshu.com/p/390147c78967]
 
