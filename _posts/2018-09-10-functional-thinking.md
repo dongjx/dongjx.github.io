@@ -81,6 +81,6 @@ java8提供了stream, optional
 
 
 ### 参考资料
-《functional thinking》  
-可能是最好的函数式编程入门[https://www.jianshu.com/p/390147c78967]
+-《functional thinking》  
+- 可能是最好的函数式编程入门[https://www.jianshu.com/p/390147c78967]
 
