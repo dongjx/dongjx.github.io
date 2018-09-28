@@ -112,5 +112,129 @@ public class HomeController {
 ![img](https://dongjx.github.io/img/posts/java-debug.png)
 3. 启动remote的debug模式
 
+### 连接数据库 postgreSql
+1. 使用psql数据库，`build.gradle`文件加入`runtime('org.postgresql:postgresql')`
+2. 使用阿里提供的https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter 数据库连接池  
+`build.gradle`文件加入`compile('com.alibaba:druid-spring-boot-starter:1.1.10')`  
+[java各种数据库连接池对比](https://github.com/alibaba/druid/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)  
+3. `application.yml`中加入
+```
+spring:
+  datasource:
+    druid:
+      url: jdbc:postgresql://127.0.0.1:5432/probation_production
+      username: postgres
+      password:
+      driver-class-name: org.postgresql.Driver
+```
+4. `./gradlew bootRun`，访问http://localhost:8080/druid/index.html 查看数据库监控 
+5. 配置jpa和show sql log，`application.yml`如下
+```
+spring:
+  datasource:
+    druid:
+      url: jdbc:postgresql://127.0.0.1:5432/probation_production
+      username: postgres
+      password:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    database: postgresql
+    properties:
+      hibernate:
+        ddl-auto: none
+        temp:
+          use_jdbc_metadata_defaults: false
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+        SQL: DEBUG
+```
+6. 创建实体
+```
+@Entity
+@Table(name = "roles")
+public class Role implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", name=" + name + "]";
+    }
+}
+```
+7. 创建数据库操作接口
+```
+public interface RoleRepository extends CrudRepository<Role, Long> {
+}
+```
+8. 创建对应的controller
+```
+package com.cattery.role;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/roles")
+public class RoleController {
+    @Autowired
+    private RoleRepository roleRepository;
+
+    @GetMapping
+    public Object index() {
+        Iterable<Role> roles = roleRepository.findAll();
+        return roles;
+    }
+
+    @PutMapping
+    public Object update(@RequestParam(name = "role") Role role) {
+        roleRepository.save(role);
+        return role;
+    }
+
+    @PostMapping
+    public Object create(@RequestParam(name = "name") String name) {
+        Role role = new Role();
+        role.setName(name);
+        roleRepository.save(role);
+        return role;
+    }
+
+    @DeleteMapping
+    public Object delete(@RequestParam(name = "id") Long id) {
+        roleRepository.deleteById(id);
+        return id;
+    }
+}
+```
+9. `./gradlew build` & './gradlew bootRun', 访问 http://localhost:8080/roles
+
+
+**github  example repo**: https://github.com/dongjx/cattery-spring-boot-jpa
+
 ### 参考资料
 [用Gradle构建Spring Boot项目](http://www.cnblogs.com/davenkin/p/gradle-spring-boot.html)
