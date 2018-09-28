@@ -32,15 +32,16 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
 Welcome to Gradle 4.10.2!
 ```
 
-### 搭建spring-boot
-1. 通过[Spring Initializr](https://start.spring.io/)来生成
-2. 自动生成的resources里面默认使用application.properties，这个文件是spring boot工程的主要配置文件，支持application.yml和application.properties两种形式，喜欢yml的请把文件修好成application.yml
-3. `gradle build`  or 使用项目下面的gradle `./gradlew build`
-使用`./gradlew` 会在项目目录的`.gradle/`下载一个gradle, 并且在`gradle/wrapper/gradle-wrapper.properties`中设置了下载的gradle的地址
-4. `./gradlew tasks` 查看所有gradle的task
-5. `build.gradle` 文件中把`compile('org.springframework.boot:spring-boot-starter')` 改为 `compile('org.springframework.boot:spring-boot-starter-web')`  
+### 搭建spring-boot项目基本框架
+1. 通过[Spring Initializr](https://start.spring.io/)来生成，dependencies选择`web`
 `spring-boot-starter-web` 里面包含了 `spring-boot-starter`
-6. 项目的xxxApplication.java文件是项目入口  
+2. 自动生成的resources里面默认使用application.properties，这个文件是spring boot工程的主要配置文件，支持application.yml和application.properties两种形式，喜欢yml的请把文件修好成application.yml
+3. `build.gradle`文件中，`apply plugin: 'eclipse'`改成`apply plugin: 'idea'`
+4. `./gradlew idea`生成IntelliJ IDEA工程文件
+5. `gradle build`  or 使用项目下面的gradle `./gradlew build`
+使用`./gradlew` 会在项目目录的`.gradle/`下载一个gradle, 并且在`gradle/wrapper/gradle-wrapper.properties`中设置了下载的gradle的地址
+6. `./gradlew tasks` 查看所有gradle的task
+7. 项目的xxxApplication.java文件是项目入口  
 ```
 @SpringBootApplication
 public class CatteryApplication {
@@ -50,6 +51,60 @@ public class CatteryApplication {
 	}
 }
 ```
+
+**此刻项目目录**
+```
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+└── src
+    ├── main
+    │   └── java
+    │       └── com.cattery
+    │           └── CatteryApplication.java
+    └── test
+        └── java
+```
+
+### 实现一个controller
+1. `com.cattery`目录下创建home目录，在home目录下创建`HomeController.java`
+```
+@RestController("/home")
+public class HomeController {
+
+    @GetMapping
+    public String index() {
+        return "hello";
+    }
+}
+```
+
+**此刻项目目录**
+```
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+└── src
+    ├── main
+    │   └── java
+    │       └── com.cattery
+    |           ├── home
+    |                 └── HomeController.java
+    │           └── CatteryApplication.java
+    └── test
+        └── java
+```
+2. `./gradlew bootRun` 
+3. 访问 `http://localhost:8080/home`
+
 
 
 
