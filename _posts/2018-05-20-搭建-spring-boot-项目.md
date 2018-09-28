@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      搭建-spring-boot-项目
+title:      搭建spring-boot项目
 subtitle:   
 date:       2018-05-20
 author:     BY annie dong
