@@ -115,8 +115,10 @@ public class HomeController {
 ### 连接数据库 postgreSql
 1. 使用psql数据库，`build.gradle`文件加入`runtime('org.postgresql:postgresql')`
 2. 使用阿里提供的 https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter 数据库连接池  
-`build.gradle`文件加入`compile('com.alibaba:druid-spring-boot-starter:1.1.10')`  
-[java各种数据库连接池对比](https://dongjx.github.io/2018/04/02/java%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%AF%B9%E6%AF%94/)  
+`build.gradle`文件加入`compile('com.alibaba:druid-spring-boot-starter:1.1.10')` 
+[java各种数据库连接池对比](https://dongjx.github.io/2018/04/02/java%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%AF%B9%E6%AF%94/)    
+另外`build.gradle`文件在加入`compile("org.springframework.boot:spring-boot-starter-data-jpa")` 引入jpa    
+
 3. `application.yml`中加入
 ```
 spring:
