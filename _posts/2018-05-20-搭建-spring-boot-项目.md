@@ -105,6 +105,15 @@ public class HomeController {
 2. `./gradlew bootRun` 
 3. 访问 `http://localhost:8080/home`
 
+### 项目debug
+1. `./gradlew bootRun --debug-jvm` 启动debug，默认监听端口5005
+2. ideal打开项目，`edit configrations` 添加一个`remote`的configration
+![img](https://dongjx.github.io/img/posts/java-debug.png)
+3. 启动remote的debug模式
+
+### 参考资料
+[用Gradle构建Spring Boot项目](http://www.cnblogs.com/davenkin/p/gradle-spring-boot.html)
+
 
 
 
