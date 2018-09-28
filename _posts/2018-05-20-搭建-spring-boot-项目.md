@@ -236,7 +236,7 @@ public class RoleController {
 9. `./gradlew build` & `./gradlew bootRun`, 访问 http://localhost:8080/roles
 
 
-**github  example repo**: https://github.com/dongjx/cattery-spring-boot-jpa
+**github  example repo**:  https://github.com/dongjx/cattery-spring-boot-jpa  
 
 ### 参考资料
 [用Gradle构建Spring Boot项目](http://www.cnblogs.com/davenkin/p/gradle-spring-boot.html)
