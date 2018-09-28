@@ -271,7 +271,7 @@ public class DruidConfig {
 
 
 
-**github  example repo**:  https://github.com/dongjx/cattery-spring-boot-jpa  
+**github  example repo**: [https://github.com/dongjx/cattery-spring-boot-jpa](https://github.com/dongjx/cattery-spring-boot-jpa) 
 
 ### 参考资料
 [用Gradle构建Spring Boot项目](http://www.cnblogs.com/davenkin/p/gradle-spring-boot.html)
