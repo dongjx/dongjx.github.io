@@ -235,6 +235,39 @@ public class RoleController {
 ```  
 9. `./gradlew build` & `./gradlew bootRun`, 访问 http://localhost:8080/roles
 
+### 查看Druid监控 
+1. `./gradlew bootRun`，访问http://localhost:8080/druid/index.html 查看数据库监控 
+2. 配置用户名，密码， 创建DruidConfig 
+
+```
+@SpringBootConfiguration
+public class DruidConfig {
+
+    @Bean
+    public ServletRegistrationBean statViewServlet() {
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),
+                "/druid/*");
+        servletRegistrationBean.addInitParameter("allow", "127.0.0.1");
+        servletRegistrationBean.addInitParameter("deny", "192.168.0.1");
+        servletRegistrationBean.addInitParameter("loginUsername", "admin");
+        servletRegistrationBean.addInitParameter("loginPassword", "123456");
+        servletRegistrationBean.addInitParameter("resetEnable", "false");
+        return servletRegistrationBean;
+    }
+
+    @Bean
+    public FilterRegistrationBean statFilter() {
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
+        filterRegistrationBean.addUrlPatterns("/*");
+        filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
+        return filterRegistrationBean;
+    }
+
+}
+```
+3. `./gradlew build` & `./gradlew bootRun`，访问http://localhost:8080/druid/index.html 输入用户名密码查看监控数据
+
+
 
 **github  example repo**:  https://github.com/dongjx/cattery-spring-boot-jpa  
 
