@@ -40,7 +40,7 @@ Welcome to Gradle 4.10.2!
 4. `./gradlew tasks` 查看所有gradle的task
 5. `build.gradle` 文件中把`compile('org.springframework.boot:spring-boot-starter')` 改为 `compile('org.springframework.boot:spring-boot-starter-web')`  
 `spring-boot-starter-web` 里面包含了 `spring-boot-starter`
-6. 项目的xxxApplication.java文件是文件入口  
+6. 项目的xxxApplication.java文件是项目入口  
 ```
 @SpringBootApplication
 public class CatteryApplication {
