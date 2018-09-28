@@ -191,8 +191,10 @@ public class Role implements Serializable {
 public interface RoleRepository extends CrudRepository<Role, Long> {
 }
 ```
-8. 创建对应的controller  
-```
+
+8. 创建对应的controller 
+
+```  
 package com.cattery.role;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -230,7 +232,7 @@ public class RoleController {
         return id;
     }
 }
-```
+```  
 9. `./gradlew build` & `./gradlew bootRun`, 访问 http://localhost:8080/roles
 
 
