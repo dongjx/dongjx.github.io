@@ -40,10 +40,11 @@ Welcome to Gradle 4.10.2!
 4. `./gradlew idea`生成IntelliJ IDEA工程文件
 5. `gradle build`  or 使用项目下面的gradle `./gradlew build`
 使用`./gradlew` 会在项目目录的`.gradle/`下载一个gradle, 并且在`gradle/wrapper/gradle-wrapper.properties`中设置了下载的gradle的地址
+
 6. `./gradlew tasks` 查看所有gradle的task
 7. 项目的xxxApplication.java文件是项目入口  
 ```
-@SpringBootApplication
+@SpringBootApplication //= @Configuration + @ComponentScan + @EnableAutoConfiguration
 public class CatteryApplication {
 
 	public static void main(String[] args) {
@@ -113,16 +114,3 @@ public class HomeController {
 
 ### 参考资料
 [用Gradle构建Spring Boot项目](http://www.cnblogs.com/davenkin/p/gradle-spring-boot.html)
-
-
-
-
-
-
-
-
-
-
-
-
-
