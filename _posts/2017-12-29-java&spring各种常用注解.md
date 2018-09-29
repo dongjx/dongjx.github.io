@@ -220,7 +220,7 @@ public class TestActiveProfile {
     }
 }
 ```   
-4. @ImportResource("classpath:ws-client.xml") - 加载xml配置   
+4. `@ImportResource("classpath:ws-client.xml")` - 加载xml配置   
 
 ### Bean的初始化和销毁
 1. @PostConstruct - 注解在方法上,在构造函数执行后执行   
@@ -275,6 +275,7 @@ public class AppConfig {
 6. @Around - 注解在方法上, 通知方法将目标方法封装起来  
 7. @Before - 注解在方法上, 通知方法会在目标方法执行之前执行   
 8. @EnableAspectJAutoProxy - JavaConfig类上使用注解@EnableAspectJAutoProxy注解启动自动代理功能，@Aspect才能生效  
+
 ```
 @Aspect
 public class Audience {
@@ -317,6 +318,7 @@ public class Audience {
     public void demandRefund() {
         System.out.println("Demanding a refund");
     }
+    
     /**
     * 环绕通知
     * @param jp 通过它调用目标方法
@@ -332,7 +334,6 @@ public class Audience {
             System.out.println("Demanding a refund");
         }
     }
-
 }
 ```
 
@@ -355,7 +356,7 @@ DEFAULT	采用数据库默认隔离级别
 READ_UNCOMMITTED	读未提交的数据（会出现脏读取） 
 READ_COMMITTED	读已提交的数据（会出现幻读，即前后两次读的不一样）  
 REPEATABLE_READ	可重复读，会出现幻读  
-SERIALIZABLE	串行化（对资源消耗较大，一般不使用） 
+SERIALIZABLE	串行化（对资源消耗较大，一般不使用）  
 
 ```
 @Service
