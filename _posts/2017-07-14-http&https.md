@@ -132,13 +132,13 @@ Last-modified实体头指定服务器上保存内容的最后修订时间。
 5. 签发者信息
 6. 证书签名
 
-### 根证书
+#### 根证书
 ![img](https://dongjx.github.io/img/posts/roots-ca.png)    
 打开mac系统的Keychain Access里面的`system roots&certificates`看到系统所有受信任的根证书:      
 - 这些根证书是系统内置的，都是由一些权威的ca机构颁发的     
 - 这些根证书都是自签证书，意思就是他们证书的签名可以通过他们自己的公钥信息解析的    
 
-### 数字证书有效性
+#### 数字证书有效性
 1. 当client访问一个https网站的时候, 会拿到对应网站的数字证书     
 2. client会先校验证书中的有效日期    
 3. client会校验该证书的签发者证书是否受信任     
