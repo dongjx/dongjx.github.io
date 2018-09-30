@@ -44,6 +44,7 @@ tags:
 - 面向连接   
 三次握手，四次挥手, 中间数据分包传输:    
 ![img](https://dongjx.github.io/img/posts/tcp.jpg)    
+ 使用Wireshake进行tcp抓包：    
 ![img](https://dongjx.github.io/img/posts/tcp1.jpg)    
 ![img](https://dongjx.github.io/img/posts/tcp2.jpg)   
 - 可靠传输    
