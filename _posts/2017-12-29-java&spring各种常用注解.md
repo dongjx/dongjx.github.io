@@ -107,7 +107,8 @@ public ServletRegistrationBean statViewServlet() {
 - Prototype，每次调用新建一个Bean实例  
 - Request，Web项目中，给每一个http request新建一个Bean实例   
 - Session，Web项目中，给每一个http session新建一个Bean实例   
-- GlobalSession，这个只在portal应用中有用，给每一个global http session 新建一个Bean实例    
+- GlobalSession，这个只在portal应用中有用，给每一个global http session 新建一个Bean实例   
+  
 ```
 @Controller("demo")
 @Scope("Prototype")
@@ -115,7 +116,7 @@ public class demo {
  
 }
 ```
-
+  
 ### 注入Bean注解
 1. @Autowired - 可以对成员变量、方法、构造函数、类，进行注释, 默认按类型装配
 注解在set方法上或属性上
