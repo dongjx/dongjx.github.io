@@ -120,6 +120,7 @@ public class demo {
 1. @Autowired - 可以对成员变量、方法、构造函数、类，进行注释, 默认按类型装配
 注解在set方法上或属性上
 如果我们想使用按名称装配，可以结合@Qualifier注解一起使用。   
+  
 ```
 @Autowired @Qualifier("staff")
 private People people;
@@ -131,7 +132,7 @@ public PeopleService(@Qualifier("staff") People people) {
  ...
 }
 ```
-
+  
 2. @Resource - 来自于java EE规范的一个annotation, 有一个name属性, 在默认情况下，spring将这个值解释为需要被注入的Bean实例的名字   
 
 ### 配置注解
