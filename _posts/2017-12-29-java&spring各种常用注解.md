@@ -164,7 +164,8 @@ private String javaHome;
 @Value("#{systemProperties['java.home']}")
 private String javaHome;
 ```  
-- 注释在方法上   
+- 注释在方法上    
+  
 ```
 @Value("Test")
 public void printValues(String s, String v){} //both 's' and 'v' values will be 'Test' 
@@ -172,7 +173,8 @@ public void printValues(String s, String v){} //both 's' and 'v' values will be 
 @Value("Test")
 public void printValues(String s, @Value("Data") String v){}
 // s=Test, v=Data
-```   
+```    
+  
 
 #### @PropertySource - 注解在类上, 目的是加载指定的属性文件   
 ```
