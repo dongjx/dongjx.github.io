@@ -237,6 +237,13 @@ public class RoleController {
 ```  
 9. `./gradlew build` & `./gradlew bootRun`, 访问 http://localhost:8080/roles
 
+### 打包运行  
+
+1. `./gradlew jar`  
+根据`build.gradle`的配置（`group = 'com.java' version = '0.0.1-SNAPSHOT' sourceCompatibility = 1.8``）生成jar名    
+2. `java -jar build/libs/xxx.jar`      
+
+
 ### 查看Druid监控 
 1. `./gradlew bootRun`，访问 http://localhost:8080/druid/index.html 查看数据库监控 
 2. 配置用户名，密码， 创建DruidConfig 
