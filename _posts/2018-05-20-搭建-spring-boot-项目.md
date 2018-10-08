@@ -240,7 +240,7 @@ public class RoleController {
 ### 打包运行  
 
 1. `./gradlew jar`  
-根据`build.gradle`的配置（`group = 'com.java' version = '0.0.1-SNAPSHOT' sourceCompatibility = 1.8``）生成jar名    
+根据`build.gradle`的配置`version = '0.0.1-SNAPSHOT'`和`settings.gradle`的配置`rootProject.name ='cattery'`生成jar名    
 2. `java -jar build/libs/xxx.jar`      
 
 
