@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      spring-boot + redis
+title:      搭建spring-boot + redis项目
 subtitle:   
 date:       2018-05-21
 author:     BY annie dong
@@ -9,10 +9,11 @@ catalog: true
 tags:
     - spring-boot
     - redis
+    - redis集群
 
 ---
 
-**github  example repo**: [https://github.com/dongjx/cattery-spring-boot-jpa-druid](https://github.com/dongjx/cattery-spring-boot-jpa-druid) 
+**github  example repo**: [https://github.com/dongjx/cattery-spring-boot-jpa-druid-redis-example](https://github.com/dongjx/cattery-spring-boot-jpa-druid-redis-example) 
 
 在上一篇spring-boot的搭建基础上，加入redis  
 
