@@ -13,7 +13,7 @@ tags:
 
 ---
 
-**github  example repo**: [https://github.com/dongjx/cattery-spring-boot-jpa-druid-redis-example](https://github.com/dongjx/cattery-spring-boot-jpa-druid-redis-example) 
+**github  example repo**: [https://github.com/dongjx/spring-boot-example](https://github.com/dongjx/spring-boot-example) 
 
 在上一篇spring-boot的搭建基础上，加入redis  
 
