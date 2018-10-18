@@ -107,12 +107,6 @@ public class HomeController {
 2. `./gradlew bootRun` 
 3. 访问 `http://localhost:8080/home`
 
-### 项目debug
-1. `./gradlew bootRun --debug-jvm` or `mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"`启动debug，默认监听端口5005   
-2. ideal打开项目，`edit configrations` 添加一个`remote`的configration
-![img](https://dongjx.github.io/img/posts/java-debug.png)
-3. 启动remote的debug模式
-
 ### 连接数据库 postgreSql
 1. 使用psql数据库，`build.gradle`文件加入`runtime('org.postgresql:postgresql')`
 2. 使用阿里提供的 https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter 数据库连接池  
